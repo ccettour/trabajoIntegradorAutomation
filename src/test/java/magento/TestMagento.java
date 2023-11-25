@@ -15,7 +15,7 @@ public class TestMagento {
     }
 
     @Test
-    public void comprarRadiantTee() throws InterruptedException {
+    public void comprarRadiantTee(){
         HomeService homeService = new HomeService(DriverManager.getDriver());
         //2. Seleccionar la prenda "Radiant Tee".
         homeService.elegirRadiantTee();
@@ -45,8 +45,6 @@ public class TestMagento {
         PaymentService paymentService = new PaymentService();
         //10. Hacer clic en "Place Order".
         paymentService.confirmarCompra();
-
-        Thread.sleep(20000);
 
 
         //Validaciones:
