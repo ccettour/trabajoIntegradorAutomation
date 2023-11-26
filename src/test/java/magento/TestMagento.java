@@ -61,6 +61,6 @@ public class TestMagento {
         Assert.assertEquals(thankYouService.getTitleText(), "Thank you for your purchase!", "El texto no coincide.");
 
         //El número de la orden (Your order # is:) es un número
-        Assert.assertTrue(thankYouService.orderNumberIsANumber(), "El elemento no es un número.");
+        Assert.assertTrue(thankYouService.orderNumberIsANumber(), "El elemento no es un numero.");
     }
 }
