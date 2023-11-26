@@ -10,6 +10,7 @@ public class TestMagento {
 
     @BeforeMethod
     public void setup() {
+        //1. Abrir el navegador web e ir al sitio Magento
         DriverManager.create("chrome");
         DriverManager.getDriver().get("https://magento.softwaretestingboard.com/");
     }
@@ -49,19 +50,17 @@ public class TestMagento {
 
         //Validaciones:
         ThankYouService thankYouService = new ThankYouService();
-        //El título es igual a "Thank you for purchase!"
-       //Assert.assertEquals(thankYouService.getTitleText(), "Thank you for your purchase!", "El texto no coincide.");
-
 
         //El botón "Continue Shopping" está habilitado.
-       Assert.assertTrue(thankYouService.isEnableContinueShopping());
-
+        Assert.assertTrue(thankYouService.isEnableContinueShopping());
 
         //El botón "Create an Account" está visible.
-       Assert.assertTrue(thankYouService.isVisibleCreateAccount());
+        Assert.assertTrue(thankYouService.isVisibleCreateAccount());
 
+        //El título es igual a "Thank you for purchase!"
+        Assert.assertEquals(thankYouService.getTitleText(), "Thank you for your purchase!", "El texto no coincide.");
 
         //El número de la orden (Your order # is:) es un número
-
+        Assert.assertTrue(thankYouService.orderNumberIsANumber(), "El elemento no es un número.");
     }
 }
